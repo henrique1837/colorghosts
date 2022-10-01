@@ -14,9 +14,9 @@ const Avatar = styled('div')`
 
 import { useAppContext } from '../hooks/useAppState'
 
-const NFT = ({img,name,velocity}) => (
+const NFT = ({image_data,name,attributes}) => (
   <div flex={1} style={{ paddingBottom: '2rem', marginLeft: '1rem', marginRight: '1rem',textAlign:'center' }} >
-    <img alt={name} src={img} style={{width:'150px'}} />
+    <img alt={name} src={image_data} style={{width:'150px'}} />
     <TextDescription
       style={{
         textAlign: "center",
@@ -24,7 +24,7 @@ const NFT = ({img,name,velocity}) => (
       }}
     >
       <p>{name}</p>
-      <p>Velocity: {velocity}</p>
+      <p>Velocity: {attributes[1].value}</p>
     </TextDescription >
   </div>
 )
@@ -46,7 +46,7 @@ export default function NFTs({nfts,title}) {
       </TextTitle>
       <SpacerLarge />
       <ResponsiveWrapper style={{justifyContent: 'center'}} flex={1}>
-        {nfts.map(({img, name , velocity }) => <NFT key={`team-member-${name}`} {...{img, name,velocity}} />)}
+        {nfts.map(({image_data, name , attributes }) => <NFT key={`team-member-${name}`} {...{image_data, name,attributes}} />)}
       </ResponsiveWrapper>
     </Container>
   )

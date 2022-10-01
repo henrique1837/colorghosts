@@ -13,8 +13,9 @@ const Avatar = styled('div')`
 `;
 
 
-const TeamMember = ({img, name}) => (
+const TeamMember = ({img, name,did}) => (
   <div style={{ paddingBottom: '2rem', marginLeft: '1rem', marginRight: '1rem',textAlign:'center' }}>
+    <a href={`https://orbis.club/profile/${did}`} target="_blank" rel="noreferrer">
     <img alt={name} src={img} style={{width: '150px'}}/>
     <TextDescription
       style={{
@@ -24,6 +25,7 @@ const TeamMember = ({img, name}) => (
     >
       {name}
     </TextDescription >
+    </a>
   </div>
 )
 
@@ -41,7 +43,7 @@ export default function Team({members}) {
       </TextTitle>
       <SpacerLarge />
       <ResponsiveWrapper style={{justifyContent: 'center'}}>
-        {members.map(({img, name}, idx) => <TeamMember key={`team-member-${idx}`} {...{img, name}} />)}
+        {members.map(({img, name, did}) => <TeamMember key={`team-member-${did}`} {...{img, name,did}} />)}
       </ResponsiveWrapper>
     </Container>
   )

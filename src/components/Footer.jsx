@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Container, TextTitle } from "../styles/globalStyles"
-import { ReactComponent as TwitterIcon } from '../assets/icons/twitter.svg'
-import { ReactComponent as TelegramIcon } from '../assets/icons/telegram.svg';
-import { ReactComponent as DiscordIcon } from '../assets/icons/discord.svg';
-import { ReactComponent as InstagramIcon } from '../assets/icons/instagram.svg';
+import OrbisLogo from "../assets/icons/orbis-logo.png";
+import BobaLogo from "../assets/icons/boba.svg";
 
 const BottomContainer = styled(Container)`
   padding: 1rem;
@@ -22,7 +20,9 @@ export default function Footer() {
   return(
   <Container jc="center" ai="center">
     <BottomContainer fd="row">
-      <SocialMediaLink href="https://twitter.com/GhostNColors"><TwitterIcon /></SocialMediaLink>
+      <SocialMediaLink href="https://orbis.club/group/stream"><img src={OrbisLogo} style={{width:'50px'}} /></SocialMediaLink>
+      <SocialMediaLink href="https://gateway.boba.network/"><img src={BobaLogo} style={{width:'40px'}} /></SocialMediaLink>
+
     </BottomContainer>
   </Container>
   )
