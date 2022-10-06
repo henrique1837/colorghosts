@@ -1,6 +1,7 @@
 import React,{useState,useMemo,useEffect,useCallback} from "react";
 import { ethers } from "ethers";
-
+import { ChatBox } from '@orbisclub/modules'
+import "@orbisclub/modules/dist/index.modern.css";
 import useConfig from "./hooks/config";
 import useWeb3Modal from "./hooks/useWeb3Modal";
 import useClient from "./hooks/useGraphClient";
@@ -232,6 +233,7 @@ function App() {
 
   return (
     <AppContext.Provider value={{ state, actions }}>
+      <ChatBox context="kjzl6cwe1jw14808eb8yfpg3g3olvhi4os1n089xyoji6jekrsit97xtxyo9t0z" poweredByOrbis="black" />
 
       <s.Container
         style={{ padding: 24, backgroundColor: "grey" }}

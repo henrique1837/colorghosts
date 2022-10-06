@@ -16,5 +16,5 @@ interface ITuringCredits {
      need to include a timestamp and/or more details about the
      offchain interaction.
   */
-  function addBalanceTo(uint256 _addBalanceAmount,address _helperContractAddress);
+  function addBalanceTo(uint256 _addBalanceAmount,address _helperContractAddress) external;
 }
